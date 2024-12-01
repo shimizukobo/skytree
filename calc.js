@@ -99,12 +99,12 @@ function renderPlaces(places, pos) {
 //alert("標高 " + jsonAltitude);
         if(jsonAltitude == 'undefind') {
         //if(jsonAltitude == null) {
-            jsonAltitude = 500;
+            jsonAltitude = 0;
         }
         else{
-            jsonAltitude = jsonAltitude - 33 + 500;
+            jsonAltitude = jsonAltitude - 33;
         }
-alert("\nちゃんと撮れるかな ver1.0.0\n展望タワーのクリスマスツリーを見るブラウザAR\n緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude + "\nボタンをタップすると撮影できます。\n\n初回の起動時には、位置情報を取得がうまくいかない場合は、\n少し時間をおいてブラウザの更新をしてください。");
+alert("\nちゃんと撮れるかな ver1.0.1\n展望タワーのクリスマスツリーを見るブラウザAR\n緯度 " + pos.coords.latitude + "\n経度 " + pos.coords.longitude + "\n標高 " + jsonAltitude + "\nボタンをタップすると撮影できます。\n\n初回の起動時には、位置情報を取得がうまくいかない場合は、\n少し時間をおいてブラウザの更新をしてください。");
     
     places.forEach((place) => {
         let latitude = place.location.lat;
@@ -119,10 +119,10 @@ alert("\nちゃんと撮れるかな ver1.0.0\n展望タワーのクリスマス
 //        model.setAttribute('look-at', '[gps-camera]');    //正面を向ける
         model.setAttribute('look-at', '');   //向きを固定する
         if(cal.distance >= 500){
-jsonAltitude = -(jsonAltitude*(cal.newDistance/cal.distance));
+jsonAltitude = -(jsonAltitude*(cal.newDistance/cal.distance))+500;
             model.setAttribute('gps-entity-place', `latitude: ${cal.newPosition[0]}; longitude: ${cal.newPosition[1]};`);
         }else {
-jsonAltitude = -jsonAltitude;
+jsonAltitude = -jsonAltitude+500;
             model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
         }
         model.setAttribute('gltf-model', `${modelName}`);
