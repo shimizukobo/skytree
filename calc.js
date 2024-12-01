@@ -78,7 +78,7 @@ function staticLoadPlaces() {
     return [
         {
             name: 'tree',
-            modelName: 'https://shimizukobo.github.io/skytree/assets/tree.glb',
+            modelName: 'https://shimizukobo.github.io/skytree/assets/aseet.glb',
             location: {
                 lat: 32.950991738811055,
                 lng: 132.5518328553992,
