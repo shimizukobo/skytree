@@ -126,7 +126,7 @@ jsonAltitude = -jsonAltitude+300;
             model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
         }
         model.setAttribute('gltf-model', `${modelName}`);
-        model.setAttribute('rotation', '0 0 180');
+        model.setAttribute('rotation', '0 180 0');
         model.setAttribute('position', '0 '+jsonAltitude+' 0');
         model.setAttribute('animation-mixer', '');
         if(cal.distance >= 500){
