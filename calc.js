@@ -119,11 +119,11 @@ alert("\nちゃんと撮れるかな ver1.0.0\n展望タワーのクリスマス
 //        model.setAttribute('look-at', '[gps-camera]');    //正面を向ける
         model.setAttribute('look-at', '');   //向きを固定する
         if(cal.distance >= 500){
-jsonAltitude = jsonAltitude*((cal.distance-cal.newDistance)/cal.distance)+300;
+jsonAltitude = (300-jsonAltitude)*((cal.distance-cal.newDistance)/cal.distance);
 //jsonAltitude = -(jsonAltitude*(cal.newDistance/cal.distance))+300;
             model.setAttribute('gps-entity-place', `latitude: ${cal.newPosition[0]}; longitude: ${cal.newPosition[1]};`);
         }else {
-jsonAltitude = -jsonAltitude+300;
+jsonAltitude = 300-jsonAltitude;
             model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
         }
         model.setAttribute('gltf-model', `${modelName}`);
