@@ -38,8 +38,12 @@
         >
         <a-camera gps-camera arjs-look-controls='smoothingFactor: 0.1' rotation-reader></a-camera>
         <!-- バックミュージック -->
-        <audio autoplay loop src="https://shimizukobo.github.io/skytree/assets/music.mp3" type="audio/mp3" >
-        </audio>        
+//        <audio autoplay loop src="https://shimizukobo.github.io/skytree/assets/music.mp3" type="audio/mp3" >
+//        </audio>
+		<a-assets timeout="1000">
+			<audio id="audio01" src="https://shimizukobo.github.io/skytree/assets/music.mp3" preload="auto"></audio>
+		</a-assets>
+		<a-sound id="my_sound01" src="#audio01" position="0 1.2 -3" autoplay="true" loop="true"></a-sound>
 
         </a-scene>
         <button id="screenshot-button"></button>
