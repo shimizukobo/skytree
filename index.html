@@ -45,7 +45,17 @@
 
         </a-scene>
         <button id="screenshot-button"></button>
-        <script src="https://shimizukobo.github.io/skytree/calc.js" type="module"></script>
+
+	<script>
+// ユーザーに「許可」を求めるダイアログを表示
+if (DeviceOrientationEvent && DeviceOrientationEvent.requestPermission &&
+ typeof DeviceOrientationEvent.requestPermission === 'function'
+ ) {
+DeviceOrientationEvent.requestPermission();
+}
+	</script>
+
+	<script src="https://shimizukobo.github.io/skytree/calc.js" type="module"></script>
         <script>
 
             document.getElementById("screenshot-button").addEventListener("click", function() {
